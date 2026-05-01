@@ -17,3 +17,5 @@ docs/marketing/
 docs/designs/
 docs/plans/
 scripts/
+!apps/web/scripts/
+!apps/web/scripts/**
