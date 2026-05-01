@@ -229,6 +229,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Install agent-browser binary
+        run: |
+          mkdir -p ~/.cargo/bin
+          curl -sSL --fail https://github.com/vercel-labs/agent-browser/releases/latest/download/agent-browser-linux-x64 -o ~/.cargo/bin/agent-browser
+          chmod +x ~/.cargo/bin/agent-browser
+          ~/.cargo/bin/agent-browser --version
+
       - name: Install agent-browser browsers
         run: ~/.cargo/bin/agent-browser install
 
