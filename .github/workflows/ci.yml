@@ -229,6 +229,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build app (E2E uses packaged mode via bin/cli.mjs → dist/)
+        run: pnpm run build
+
       - name: Install agent-browser binary
         run: |
           mkdir -p ~/.cargo/bin
